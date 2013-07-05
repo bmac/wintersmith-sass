@@ -16,7 +16,7 @@ module.exports = (wintersmith, callback) ->
         if path.basename(@_filename.full).charAt(0) == '_'
           callback null
         else
-          command = @_filename.full
+          command = '"#{@_filename.full}"'
           
           if @_source.search(/(\$compressed:)([ ]*)(true;)/ig) isnt -1
             command = '-t compressed '+command
